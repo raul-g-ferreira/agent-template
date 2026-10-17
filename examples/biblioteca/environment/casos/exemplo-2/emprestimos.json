@@ -1,0 +1,6 @@
+[
+  { "id": "E10", "usuario": "davi", "livro": "L7", "retirada": "2026-10-01", "renovacoes": 2 },
+  { "id": "E11", "usuario": "eva", "livro": "L8", "retirada": "2026-09-01", "renovacoes": 0 },
+  { "id": "E12", "usuario": "fabio", "livro": "L9", "retirada": "2026-10-01", "renovacoes": 1 },
+  { "id": "E13", "usuario": "davi", "livro": "L10", "retirada": "2026-10-05", "renovacoes": 0 }
+]

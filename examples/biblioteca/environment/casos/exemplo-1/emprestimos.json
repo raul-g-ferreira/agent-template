@@ -1,0 +1,5 @@
+[
+  { "id": "E1", "usuario": "ana", "livro": "L1", "retirada": "2026-10-01", "renovacoes": 0 },
+  { "id": "E2", "usuario": "ana", "livro": "L2", "retirada": "2026-10-01", "renovacoes": 0 },
+  { "id": "E3", "usuario": "bruno", "livro": "L3", "retirada": "2026-10-01", "renovacoes": 0 }
+]

@@ -1,0 +1,17 @@
+# Public repo: self-hosted dfl-runner blocked (allows_public=false). Authorized Tainan TG 2026-06-06.
+name: check-agent
+on: [push, pull_request]
+jobs:
+  layout:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check the agent layout TestMyAgent reads
+        run: |
+          set -e
+          if [ ! -f AGENTS.md ] && [ ! -f CLAUDE.md ]; then echo "AGENTS.md ou CLAUDE.md é obrigatório"; exit 1; fi
+          size=$(cat AGENTS.md CLAUDE.md 2>/dev/null | wc -c); [ -d skills ] && size=$((size + $(find skills -type f -exec cat {} + | wc -c)))
+          echo "tamanho do agente: $size bytes (máximo 204800)"
+          [ "$size" -le 204800 ]
+          if find skills -type l 2>/dev/null | grep -q .; then echo "symlink em skills/ não é aceito"; exit 1; fi
+          bash -n evals/run-local.sh
